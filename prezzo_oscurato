@@ -1,0 +1,20 @@
+// Rimuove ATC e mostra pulsante "Richiedi Informazioni" per i prodotti con tag "privato"
+add_action('woocommerce_after_shop_loop_item', function() {
+    global $product;
+
+    if ( ! $product instanceof WC_Product ) {
+        return;
+    }
+
+    if ( has_term('privato', 'product_tag', $product->get_id()) ) {
+        // Rimuove il pulsante "Aggiungi al carrello"
+        remove_action('woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart', 10);
+
+        // Output pulsante personalizzato con classi tema
+        $url   = get_permalink($product->get_id());
+        $label = 'Richiedi Informazioni';
+
+        echo '<a href="' . esc_url($url) . '" class="btn btn-style-bordered" style="margin-top:8px;">' 
+             . esc_html($label) . '</a>';
+    }
+}, 9);
