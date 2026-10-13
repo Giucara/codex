@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Zàgarà · Ristorante gastronomico a Catania</title>
+<meta name="description" content="Zàgarà, ristorante gastronomico dello chef Massimiliano Romano a Catania. Prototipo interattivo della homepage.">
+<meta name="theme-color" content="#1B3A2A">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- Simbolo riutilizzabile: piccolo fiore di zagara a tratto -->
+<svg class="sr-defs" aria-hidden="true" focusable="false">
+  <symbol id="i-flower" viewBox="-24 -24 48 48" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M0,-3.5 C4.5,-8 7,-15 0,-22 C-7,-15 -4.5,-8 0,-3.5Z"/>
+    <path d="M0,-3.5 C4.5,-8 7,-15 0,-22 C-7,-15 -4.5,-8 0,-3.5Z" transform="rotate(72)"/>
+    <path d="M0,-3.5 C4.5,-8 7,-15 0,-22 C-7,-15 -4.5,-8 0,-3.5Z" transform="rotate(144)"/>
+    <path d="M0,-3.5 C4.5,-8 7,-15 0,-22 C-7,-15 -4.5,-8 0,-3.5Z" transform="rotate(216)"/>
+    <path d="M0,-3.5 C4.5,-8 7,-15 0,-22 C-7,-15 -4.5,-8 0,-3.5Z" transform="rotate(288)"/>
+    <path d="M0,-3 L2.2,-8.5 M0,-3 L-2.6,-8 M0,-3 L4.8,-5.2 M0,-3 L-4.6,-5.6 M0,-3 L0.4,-9.2"/>
+    <circle r="2.1" fill="currentColor" stroke="none"/>
+  </symbol>
+</svg>
+
+<div class="grain" aria-hidden="true"></div>
+<div class="cursor" aria-hidden="true"><span class="cursor__dot"></span><span class="cursor__label"></span></div>
+
+<!-- ===================== HEADER ===================== -->
+<header class="site-header on-dark">
+  <div class="header__left">
+    <button class="burger" type="button" aria-expanded="false" aria-controls="nav" aria-label="Apri il menu">
+      <span class="burger__icon"></span>
+      <span class="burger__txt" data-i18n="nav.menu">Menu</span>
+    </button>
+  </div>
+  <a class="logo" href="#top" data-cursor="invert" aria-label="Zàgarà, torna all'inizio">Zàgarà</a>
+  <div class="header__right">
+    <button class="lang" type="button" aria-label="Cambia lingua / Change language">
+      <span data-lang="it" class="is-active">IT</span><span class="sep">/</span><span data-lang="en">EN</span>
+    </button>
+    <a class="btn btn--sm header__cta" href="#" data-thefork data-cursor="label" data-cursor-label="TheFork" data-i18n="nav.book">Prenota</a>
+  </div>
+</header>
+
+<!-- ===================== MENU A TUTTO SCHERMO ===================== -->
+<nav id="nav" class="nav" aria-label="Menu principale">
+  <ul class="nav__list">
+    <li><a href="#top" style="--i:0" data-i18n="nav.home">Home</a></li>
+    <li><a href="#chef" style="--i:1" data-i18n="nav.chef">Lo chef</a></li>
+    <li><a href="#filosofia" style="--i:2" data-i18n="nav.philo">Filosofia</a></li>
+    <li><a href="#menu" style="--i:3" data-i18n="nav.menuSection">Il menù</a></li>
+    <li><a href="#galleria" style="--i:4" data-i18n="nav.gallery">Galleria</a></li>
+    <li><a href="#prenota" style="--i:5" data-i18n="nav.bookSection">Prenota</a></li>
+    <li><a href="#contatti" style="--i:6" data-i18n="nav.contacts">Contatti</a></li>
+  </ul>
+  <div class="nav__aside">
+    <p>Viale XX Settembre 64<br>95129 Catania</p>
+    <p><a href="tel:+390958320916">+39 095 832 09 16</a><br><a href="mailto:zagararistorante@outlook.it">zagararistorante@outlook.it</a></p>
+    <p><a href="https://www.instagram.com/zagara_ristorante" target="_blank" rel="noopener">Instagram · @zagara_ristorante</a></p>
+  </div>
+</nav>
+
+<main id="top">
+
+  <!-- ===================== 1. HERO ===================== -->
+  <section class="hero" aria-label="Zàgarà, la Sicilia in fiore">
+    <div class="hero__sticky">
+      <div class="hero__flower" aria-hidden="true">
+        <svg class="flower" viewBox="-210 -210 420 420"></svg>
+      </div>
+      <div class="hero__brand">
+        <p class="hero__eyebrow" data-i18n="hero.eyebrow">Ristorante gastronomico · Catania</p>
+        <h1 class="hero__logo split split-chars" data-cursor="invert">Zàgarà</h1>
+      </div>
+      <p class="hero__tag" data-i18n="hero.tag">La Sicilia, in fiore.</p>
+      <div class="hero__meta" aria-hidden="true">
+        <span data-i18n="hero.frame">Timelapse · fotogramma</span>
+        <b><span id="frame">000</span> / 120</b>
+        <span class="hero__meta-note" data-i18n="hero.placeholder">sequenza segnaposto</span>
+      </div>
+      <div class="hero__side" aria-hidden="true">Viale XX Settembre 64<br>Catania</div>
+      <p class="hero__hint" data-i18n="hero.hint">Scorri per far sbocciare</p>
+    </div>
+  </section>
+
+  <!-- ===================== 2. BADGE DI FIDUCIA ===================== -->
+  <section class="trust" id="fiducia" aria-label="Valutazioni e prezzo medio">
+    <div class="wrap">
+      <ul class="trust__list">
+        <li class="trust__item fade">
+          <span class="trust__src cap">TheFork</span>
+          <span class="trust__val"><span class="ph-num">9,4</span><small>/ 10</small></span>
+          <span class="trust__note" data-i18n="trust.fork">Valutazione degli ospiti</span>
+        </li>
+        <li class="trust__item fade">
+          <span class="trust__src cap">Google</span>
+          <span class="trust__val"><span class="ph-num">4,8</span><small>/ 5</small></span>
+          <span class="trust__note" data-i18n="trust.google">Recensioni verificate</span>
+        </li>
+        <li class="trust__item fade">
+          <span class="trust__src cap" data-i18n="trust.priceLabel">Prezzo medio</span>
+          <span class="trust__val"><span class="ph-num">€ 90</span></span>
+          <span class="trust__note" data-i18n="trust.price">a persona, bevande escluse</span>
+        </li>
+      </ul>
+      <p class="trust__legend" data-i18n="trust.legend">* Valori segnaposto, da sostituire con i dati reali di TheFork e Google.</p>
+    </div>
+  </section>
+
+  <!-- ===================== 3. LO CHEF ===================== -->
+  <section class="section chef" id="chef">
+    <div class="wrap grid">
+      <div class="chef__text">
+        <p class="eyebrow" data-i18n="chef.eyebrow">Lo chef</p>
+        <h2 class="display display--l split split-chars" data-cursor="invert" data-i18n="chef.title">Massimiliano Romano</h2>
+        <p class="lead split split-words" data-i18n="chef.lead">Una cucina d'autore che nasce a Catania e guarda al Mediterraneo.</p>
+        <div class="fade">
+          <p data-i18n="chef.p1">Massimiliano Romano lavora per sottrazione: pochi elementi nel piatto, materia prima scelta ogni mattina, un gusto netto che resta in memoria. Il fiore d'arancio, discreto e persistente, è il filo che lega i piatti alla città.</p>
+          <p data-i18n="chef.p2">In sala, un servizio attento e mai invadente accompagna il percorso dal primo assaggio al caffè.</p>
+          <a class="link" href="#" data-cursor="label" data-cursor-label="Scopri"><span data-i18n="chef.cta">La nostra storia</span><span class="arrow" aria-hidden="true">→</span></a>
+        </div>
+      </div>
+      <figure class="ph ph--3x4 chef__photo" data-cursor="label" data-cursor-label="+">
+        <div class="ph__media"></div>
+        <figcaption class="ph__cap">
+          <svg class="icon" aria-hidden="true"><use href="#i-flower"/></svg>
+          <span data-i18n="chef.photo">Ritratto dello chef in cucina, luce naturale, formato verticale</span>
+          <em data-i18n="ph.label">foto segnaposto</em>
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ===================== 4. FILOSOFIA ===================== -->
+  <section class="section philo" id="filosofia" data-dark>
+    <div class="wrap grid">
+      <div class="philo__title">
+        <p class="eyebrow" data-i18n="philo.eyebrow">Filosofia</p>
+        <h2 class="display display--xl split split-chars" data-cursor="invert" data-i18n="philo.title">Il territorio detta il tempo.</h2>
+      </div>
+      <div class="philo__body">
+        <p class="lead split split-words" data-i18n="philo.lead">Niente entra in cucina prima della sua stagione.</p>
+        <p class="fade" data-i18n="philo.p">Lavoriamo con piccoli produttori dell'Etna, della costa ionica e della Piana di Catania. Pesce del giorno, ortaggi raccolti a pochi chilometri, agrumi solo quando sono al loro meglio. Il resto è tempo, misura e mano.</p>
+      </div>
+      <ul class="philo__terms fade">
+        <li class="term"><h4>Etna</h4><p data-i18n="philo.t1">Vigne, nocciole ed erbe spontanee di montagna.</p></li>
+        <li class="term"><h4>Ionio</h4><p data-i18n="philo.t2">Il pescato del giorno dai porti di Catania e Aci Trezza.</p></li>
+        <li class="term"><h4 data-i18n="philo.t3h">La Piana</h4><p data-i18n="philo.t3">Agrumeti e orti della pianura catanese.</p></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ===================== 5. IL MENÙ ===================== -->
+  <section class="section menu" id="menu">
+    <div class="wrap">
+      <div class="menu__head">
+        <div>
+          <p class="eyebrow" data-i18n="menu.eyebrow">Il menù</p>
+          <h2 class="display display--l split split-chars" data-cursor="invert" data-i18n="menu.title">A tavola</h2>
+        </div>
+        <div class="tabs" role="tablist" aria-label="Menù">
+          <button class="tab" role="tab" id="tab-carta" type="button" aria-selected="true" aria-controls="panel-carta" data-i18n="menu.tabCarta">Alla carta</button>
+          <button class="tab" role="tab" id="tab-percorsi" type="button" aria-selected="false" aria-controls="panel-percorsi" tabindex="-1" data-i18n="menu.tabTours">Percorsi degustazione</button>
+          <span class="tabs__ind" aria-hidden="true"></span>
+        </div>
+      </div>
+
+      <div class="panel" id="panel-carta" role="tabpanel" aria-labelledby="tab-carta">
+        <ul class="carta">
+          <li class="dish fade">
+            <h4 data-i18n="menu.c1">Ricciola cruda, acqua di zagara, mandorla di Avola</h4>
+            <p data-i18n="menu.c1d">Pescato del giorno marinato, latte di mandorla, olio al fiore d'arancio</p>
+            <span class="price">€ 26</span>
+          </li>
+          <li class="dish fade">
+            <h4 data-i18n="menu.c2">Carciofo violetto, nero di seppia, bottarga di tonno</h4>
+            <p data-i18n="menu.c2d">Cotto alla brace, fondo di seppia, scorza di bergamotto</p>
+            <span class="price">€ 22</span>
+          </li>
+          <li class="dish fade">
+            <h4 data-i18n="menu.c3">Spaghettone, ricci di mare, finocchietto selvatico</h4>
+            <p data-i18n="menu.c3d">Grano siciliano, ricci dello Ionio, erbe dell'Etna</p>
+            <span class="price">€ 32</span>
+          </li>
+          <li class="dish fade">
+            <h4 data-i18n="menu.c4">Risotto alla zagara, gambero rosso di Mazara</h4>
+            <p data-i18n="menu.c4d">Riso Carnaroli, fiori d'arancio, gambero crudo, pepe rosa</p>
+            <span class="price">€ 30</span>
+          </li>
+          <li class="dish fade">
+            <h4 data-i18n="menu.c5">Agnello dei Nebrodi, cicoria, miele d'arancio</h4>
+            <p data-i18n="menu.c5d">Carré cotto rosa, cicoria selvatica, fondo al miele di zagara</p>
+            <span class="price">€ 38</span>
+          </li>
+          <li class="dish fade">
+            <h4 data-i18n="menu.c6">Latte di mandorla, zagara, pistacchio di Bronte</h4>
+            <p data-i18n="menu.c6d">Gelato al latte di mandorla, meringa al fiore d'arancio, pistacchio tostato</p>
+            <span class="price">€ 16</span>
+          </li>
+        </ul>
+        <div class="menu__note">
+          <span data-i18n="menu.note">Prezzi indicativi, da confermare. Coperto e servizio inclusi.</span>
+          <a class="btn" href="#" data-cursor="label" data-cursor-label="Scopri" data-i18n="menu.cta">Menù completo</a>
+        </div>
+      </div>
+
+      <div class="panel" id="panel-percorsi" role="tabpanel" aria-labelledby="tab-percorsi" hidden>
+        <div class="tours">
+          <article class="tour fade" data-price="85" data-pair="40">
+            <div class="tour__head">
+              <h3 class="tour__name">Fiore</h3>
+              <span class="tour__courses cap" data-i18n="menu.t1c">5 portate</span>
+            </div>
+            <p data-i18n="menu.t1d">Un primo incontro con la cucina di Zàgarà: il mare, l'orto e un dolce al fiore d'arancio.</p>
+            <label class="pair" for="pair-fiore">
+              <span><span data-i18n="menu.t1pair">Abbinamento vini, 3 calici</span> <b>+ € 40</b></span>
+              <input class="switch" type="checkbox" id="pair-fiore">
+            </label>
+            <div class="tour__price"><b>€ 85</b><small data-i18n="menu.perPerson">a persona</small></div>
+          </article>
+          <article class="tour tour--dark fade" data-price="120" data-pair="65">
+            <div class="tour__head">
+              <h3 class="tour__name">Radici</h3>
+              <span class="tour__courses cap" data-i18n="menu.t2c">8 portate</span>
+            </div>
+            <p data-i18n="menu.t2d">Il percorso completo, dalla costa ionica all'Etna. Servito a tutto il tavolo, ultimo ingresso alle 21:30.</p>
+            <label class="pair" for="pair-radici">
+              <span><span data-i18n="menu.t2pair">Abbinamento vini, 5 calici</span> <b>+ € 65</b></span>
+              <input class="switch" type="checkbox" id="pair-radici">
+            </label>
+            <div class="tour__price"><b>€ 120</b><small data-i18n="menu.perPerson">a persona</small></div>
+          </article>
+        </div>
+        <div class="menu__note">
+          <span data-i18n="menu.noteTours">I percorsi sono serviti a tutto il tavolo. Allergie e intolleranze: avvisateci al momento della prenotazione.</span>
+          <a class="btn" href="#" data-cursor="label" data-cursor-label="Scopri" data-i18n="menu.cta">Menù completo</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 6. GALLERIA ===================== -->
+  <section class="section gallery" id="galleria">
+    <div class="wrap">
+      <p class="eyebrow" data-i18n="gallery.eyebrow">La sala e i piatti</p>
+      <div class="grid gallery__grid">
+        <figure class="ph ph--4x5 g1" data-cursor="label" data-cursor-label="+">
+          <div class="ph__media"></div>
+          <figcaption class="ph__cap">
+            <svg class="icon" aria-hidden="true"><use href="#i-flower"/></svg>
+            <span data-i18n="gallery.1">Piatto signature, luce naturale, fondo scuro</span>
+            <em data-i18n="ph.label">foto segnaposto</em>
+          </figcaption>
+        </figure>
+        <figure class="ph ph--1x1 ph--stone g2" data-cursor="label" data-cursor-label="+">
+          <div class="ph__media"></div>
+          <figcaption class="ph__cap">
+            <svg class="icon" aria-hidden="true"><use href="#i-flower"/></svg>
+            <span data-i18n="gallery.2">La sala al tramonto, dettaglio della mise en place</span>
+            <em data-i18n="ph.label">foto segnaposto</em>
+          </figcaption>
+        </figure>
+        <figure class="ph ph--3x4 ph--warm g3" data-cursor="label" data-cursor-label="+">
+          <div class="ph__media"></div>
+          <figcaption class="ph__cap">
+            <svg class="icon" aria-hidden="true"><use href="#i-flower"/></svg>
+            <span data-i18n="gallery.3">Le mani dello chef durante l'impiattamento</span>
+            <em data-i18n="ph.label">foto segnaposto</em>
+          </figcaption>
+        </figure>
+        <figure class="ph ph--16x10 g4" data-cursor="label" data-cursor-label="+">
+          <div class="ph__media"></div>
+          <figcaption class="ph__cap">
+            <svg class="icon" aria-hidden="true"><use href="#i-flower"/></svg>
+            <span data-i18n="gallery.4">Dessert alla zagara, ripresa dall'alto</span>
+            <em data-i18n="ph.label">foto segnaposto</em>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 7. MARQUEE ===================== -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee__track">
+      <div class="marquee__group">
+        <span data-i18n="mq.1">Cucina di Sicilia</span><i>·</i>
+        <span data-i18n="mq.2">Catania</span><i>·</i>
+        <span>Zàgarà</span><i>·</i>
+        <span data-i18n="mq.4">Fiore d'agrumi</span><i>·</i>
+      </div>
+      <div class="marquee__group">
+        <span data-i18n="mq.1">Cucina di Sicilia</span><i>·</i>
+        <span data-i18n="mq.2">Catania</span><i>·</i>
+        <span>Zàgarà</span><i>·</i>
+        <span data-i18n="mq.4">Fiore d'agrumi</span><i>·</i>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== 8. PRENOTAZIONE ===================== -->
+  <section class="section book" id="prenota" data-dark>
+    <svg class="book__flower" viewBox="-210 -210 420 420" aria-hidden="true"></svg>
+    <div class="wrap grid">
+      <div class="book__main">
+        <p class="eyebrow" data-i18n="book.eyebrow">Prenotazione</p>
+        <h2 class="display display--xl split split-chars" data-cursor="invert" data-i18n="book.title">Un tavolo a Zàgarà</h2>
+        <p class="lead split split-words" data-i18n="book.lead">Online in pochi secondi, oppure al telefono.</p>
+        <p class="fade" data-i18n="book.p">Prenota su TheFork o chiamaci: saremo felici di organizzare la tua serata, anche per gruppi e occasioni speciali.</p>
+        <div class="book__ctas fade">
+          <a class="btn btn--gold" href="#" data-thefork data-cursor="label" data-cursor-label="TheFork" data-i18n="book.cta">Prenota su TheFork</a>
+          <a class="btn" href="tel:+390958320916" data-cursor="label" data-cursor-label="Chiama"><span data-i18n="book.call">Chiama</span>&nbsp;+39 095 832 09 16</a>
+        </div>
+      </div>
+      <div class="book__hours fade">
+        <div><span data-i18n="hours.d1">Martedì – Sabato</span><span>19:30 – 23:00</span></div>
+        <div><span data-i18n="hours.d2">Domenica</span><span data-i18n="hours.h2">solo pranzo</span></div>
+        <div><span data-i18n="hours.d3">Lunedì</span><span data-i18n="hours.h3">chiuso</span></div>
+        <p class="book__hours-note" data-i18n="hours.note">Orari segnaposto, da confermare.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ===================== 9. FOOTER ===================== -->
+<footer class="footer" id="contatti">
+  <div class="wrap">
+    <div class="footer__grid">
+      <div>
+        <p class="footer__logo">Zàgarà</p>
+        <p class="footer__tag" data-i18n="footer.tag">Ristorante gastronomico · Chef Massimiliano Romano</p>
+        <svg class="footer__icon" aria-hidden="true"><use href="#i-flower"/></svg>
+      </div>
+      <div>
+        <h5 class="cap" data-i18n="footer.where">Dove siamo</h5>
+        <address>Viale XX Settembre 64<br>95129 Catania</address>
+        <a class="link" href="https://maps.google.com/?q=Viale+XX+Settembre+64,+95129+Catania" target="_blank" rel="noopener" data-cursor="label" data-cursor-label="Apri"><span data-i18n="footer.map">Apri la mappa</span><span class="arrow" aria-hidden="true">↗</span></a>
+      </div>
+      <div>
+        <h5 class="cap" data-i18n="footer.contacts">Contatti</h5>
+        <p>
+          <a href="tel:+390958320916">+39 095 832 09 16</a><br>
+          <a href="mailto:zagararistorante@outlook.it">zagararistorante@outlook.it</a><br>
+          <a href="https://www.instagram.com/zagara_ristorante" target="_blank" rel="noopener">Instagram · @zagara_ristorante</a>
+        </p>
+      </div>
+      <div>
+        <h5 class="cap" data-i18n="footer.hours">Orari</h5>
+        <p>
+          <span data-i18n="hours.d1">Martedì – Sabato</span> · 19:30 – 23:00<br>
+          <span data-i18n="hours.d2">Domenica</span> · <span data-i18n="hours.h2">solo pranzo</span><br>
+          <span data-i18n="hours.d3">Lunedì</span> · <span data-i18n="hours.h3">chiuso</span><br>
+          <small data-i18n="hours.note">Orari segnaposto, da confermare.</small>
+        </p>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© 2026 Zàgarà · Catania · <span data-i18n="footer.vat">P. IVA segnaposto</span></span>
+      <nav aria-label="Note legali">
+        <a href="#" data-i18n="footer.privacy">Privacy policy</a>
+        <a href="#" data-i18n="footer.cookie">Cookie policy</a>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+<!-- Badge fisso: ruota lentamente attorno al fiore, apre TheFork -->
+<a class="badge" href="#" data-thefork aria-label="Prenota un tavolo su TheFork · Book a table on TheFork" data-cursor="label" data-cursor-label="TheFork">
+  <svg class="badge__ring" viewBox="0 0 100 100" aria-hidden="true">
+    <defs><path id="badge-path" d="M50,50 m-37,0 a37,37 0 1,1 74,0 a37,37 0 1,1 -74,0"/></defs>
+    <text><textPath href="#badge-path" textLength="232" lengthAdjust="spacing">Prenota un tavolo · Book a table ·</textPath></text>
+  </svg>
+  <svg class="badge__flower" aria-hidden="true"><use href="#i-flower"/></svg>
+</a>
+
+<div class="toast" role="status" aria-live="polite"></div>
+
+<script src="js/main.js" defer></script>
+</body>
+</html>
